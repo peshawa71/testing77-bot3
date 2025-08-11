@@ -1,7 +1,7 @@
 import subprocess
 
-input_file = "input.mp4"
-output_file = "main_video.mp4"
+input_file = "main_video.mp4"
+output_file = "hhhhh.mp4"
 
 # Trim from 5 to 10 seconds without re-encoding (super fast)
 cmd = [
