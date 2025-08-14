@@ -14,4 +14,4 @@ RUN apt-get update && \
 # COPY . /app
 
 # Default command to show ffmpeg version (you can override this)
-CMD ["ffmpeg", "-version"]
+CMD ["ffmpeg", "-version", "python main.py"]
