@@ -1,7 +1,7 @@
 import subprocess
 print("may its working")
 
-input_file = "main_video.mp4"
+input_file = "https://github.com/peshawa71/testing77-bot3/blob/main/main_video.mp4"
 output_file = "hhhhh.mp4"
 
 # Trim from 5 to 10 seconds without re-encoding (super fast)
