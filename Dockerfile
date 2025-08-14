@@ -10,9 +10,6 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Set working directory
-WORKDIR /app
-
 # Copy your script or files here (optional)
 # COPY . /app
 
