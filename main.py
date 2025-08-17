@@ -31,7 +31,7 @@ if not os.path.exists(video_path):
 clip = VideoFileClip(video_path)
 
 # Cut 5s → 15s
-cut = clip.subclip(5, 15)
+
 
 # Export
 cut.write_videofile("cut.mp4", codec="libx264", audio_codec="aac", fps=24)
