@@ -22,7 +22,7 @@ import os
 from moviepy.editor import VideoFileClip
 
 video_path = "main_video.mp4"
-
+print(os.path.exists(video_path))  
 # Check if file exists
 if not os.path.exists(video_path):
     raise FileNotFoundError(f"The file '{video_path}' does not exist!")
