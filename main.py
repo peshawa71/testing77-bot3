@@ -34,4 +34,4 @@ clip = VideoFileClip(video_path)
 
 
 # Export
-cut.write_videofile("cut.mp4", codec="libx264", audio_codec="aac", fps=24)
+clip.write_videofile("cut.mp4", codec="libx264", audio_codec="aac", fps=24)
