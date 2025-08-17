@@ -18,11 +18,20 @@
 # print("Video edited and saved as", output_file)
 
 # main.py
+import os
 from moviepy.editor import VideoFileClip
 
-clip = VideoFileClip("main_video.mp4")
-cut = clip.subclip(0, 5)   # cut from 5s to 15s
-cut.write_videofile("cut.mp4", codec="libx264", fps=24)
+video_path = "main_video.mp4"
 
+# Check if file exists
+if not os.path.exists(video_path):
+    raise FileNotFoundError(f"The file '{video_path}' does not exist!")
 
+# If it exists, proceed
+clip = VideoFileClip(video_path)
 
+# Cut 5s → 15s
+cut = clip.subclip(5, 15)
+
+# Export
+cut.write_videofile("cut.mp4", codec="libx264", audio_codec="aac", fps=24)
