@@ -26,9 +26,6 @@ clip = VideoFileClip("main_video.mp4")
 # Cut the first 10 seconds
 clip = clip.subclip(0, 10)
 
-# Resize to 480p
-clip = clip.resize(height=480)
-
 # Add text overlay
 txt = TextClip("Edited with MoviePy", fontsize=40, color="white")
 txt = txt.set_position(("center", "bottom")).set_duration(clip.duration)
