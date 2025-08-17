@@ -21,7 +21,8 @@
 from moviepy.editor import VideoFileClip
 
 clip = VideoFileClip("main_video.mp4")
-cut = clip.subclip(5, 15)   # cut from 5s to 15s
+cut = clip.subclip(0, 5)   # cut from 5s to 15s
 cut.write_videofile("cut.mp4", codec="libx264", fps=24)
+
 
 
