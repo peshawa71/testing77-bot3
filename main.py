@@ -18,22 +18,10 @@
 # print("Video edited and saved as", output_file)
 
 # main.py
-from moviepy.editor import *
+from moviepy.editor import VideoFileClip
 
-# Load your video
 clip = VideoFileClip("main_video.mp4")
-
-# Cut the first 10 seconds
-clip = clip.subclip(0, 10)
-
-# Add text overlay
-txt = TextClip("Edited with MoviePy", fontsize=40, color="white")
-txt = txt.set_position(("center", "bottom")).set_duration(clip.duration)
-
-# Combine video + text
-final = CompositeVideoClip([clip, txt])
-
-# Export the result
-final.write_videofile("edited.mp4", codec="libx264", fps=24)
+cut = clip.subclip(5, 15)   # cut from 5s to 15s
+cut.write_videofile("cut.mp4", codec="libx264", fps=24)
 
 
