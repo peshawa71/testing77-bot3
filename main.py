@@ -61,7 +61,8 @@ os.makedirs(DOWNLOADS_DIR, exist_ok=True)
 
 client = TelegramClient("session_name", api_id, api_hash)
 client.start()
-
+path = "editings"
+os.makedirs(path, exist_ok=True) 
 import os
 
 def create_path(path_str):
