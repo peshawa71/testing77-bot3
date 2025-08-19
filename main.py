@@ -363,8 +363,6 @@ def download_sponsor_videos(chat, limit):
                 if filename:
 
                     print(f"\n✅ Downloaded: {filename}")
-                    make_video()
-                    vidoe_edit()
 
                     # client.send_file("completed1", image_video, caption="Here is the video 🎬")
                     # print("sented to channel you provided")
@@ -375,6 +373,8 @@ def download_sponsor_videos(chat, limit):
                 print(f"❌ file Error : {e}")
 
 download_sponsor_videos("sponsor_hadia", 50)
+make_video()
+vidoe_edit()
 # # watch again bro for ...
 # from telethon import TelegramClient
 
