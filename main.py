@@ -204,6 +204,14 @@ import requests
 
 api_id = int(os.getenv("APITELEGRAM_ID")) 
 api_hash = os.getenv("APITELEGRAM_HASH")
+from moviepy.editor import VideoFileClip, ImageClip, concatenate_videoclips, CompositeVideoClip
+import os
+from dotenv import load_dotenv
+from telethon.sync import TelegramClient
+from telethon.tl.types import MessageMediaPhoto, MessageMediaDocument
+from telethon.tl.types import InputPeerChannel
+import tqdm
+import requests
 
 url = "https://i.ibb.co/Zp45mK3s/logo-gull2bigger.png"  # your direct link
 response = requests.get(url)
@@ -226,6 +234,8 @@ load_dotenv()
 # api_hash = "3c2e0087748a3fc216f6eb807232c05d"
 # channel_to_send = -1002384585674
 
+api_id = 20158406
+api_hash = "f0f4bc610215107583cd16e733c9cc38"
 channel_to_send = -1002332921402
 path = "editings"
 os.makedirs(path, exist_ok=True) 
@@ -264,10 +274,10 @@ def get_available_filename(base_name, ext=".mp4"):
         i += 1
     return filename
 
-def make_video(path="sponsors1\images\sponsor2.jpg", path2="sponsors1\images\screensponsor1.jpg"):
+def make_video(path="sponsors1/images/sponsor2.jpg", path2="sponsors1/images/screensponsor1.jpg"):
     from moviepy.editor import ImageClip
 
-    os.makedirs("sponsors1\images", exist_ok=True)
+    os.makedirs("sponsors1/images", exist_ok=True)
     os.makedirs("editings", exist_ok=True)
     os.makedirs("editings/export", exist_ok=True)
 
@@ -356,13 +366,14 @@ def download_sponsor_videos(chat, limit):
                     
 
 
-                print(f"\n📥 Downloading media from message ID {msg.id} {msg.text} loading...")
+                print(f"\n📥 Downloading media from message ID {msg.id} {msg.message} loading...")
                 filename = client.download_media(msg, namefile)
                 print(f"{filename} dowmnloaded")
 
                 if filename:
 
                     print(f"\n✅ Downloaded: {filename}")
+
 
                     # client.send_file("completed1", image_video, caption="Here is the video 🎬")
                     # print("sented to channel you provided")
@@ -375,6 +386,29 @@ def download_sponsor_videos(chat, limit):
 download_sponsor_videos("sponsor_hadia", 50)
 make_video()
 vidoe_edit()
+# # watch again bro for ...
+# from telethon import TelegramClient
+
+# api_id = 1234567  # your API ID
+# api_hash = 'your_api_hash'
+# channel = 'https://t.me/your_channel_username'  # or channel ID
+
+# client = TelegramClient('session_name', api_id, api_hash)
+
+# async def send_video():
+#     await client.start()
+
+#     await client.send_file(
+#         entity=channel,
+#         file='your_video.mp4',
+#         caption="🎬 Watch this video!",
+#         supports_streaming=True,  # This is what makes it playable without download
+#         thumb='thumbnail.jpg'  # Optional: add custom thumbnail
+#     )
+
+# with client:
+#     client.loop.run_until_complete(send_video())
+
 # # watch again bro for ...
 # from telethon import TelegramClient
 
