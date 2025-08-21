@@ -318,12 +318,12 @@ def vidoe_edit():
     )
 
     # Overlay logo on the main video
-    main_with_logo = CompositeVideoClip([main, logo])
+    # main_with_logo = CompositeVideoClip([main, logo])
 
     # === 3. Cut the main video into parts ===
     # Example: cut 0–10 sec, skip 10–20 sec, keep 20–40 sec
-    part1 = main_with_logo.subclip(0, 5)
-    part2 = main_with_logo.subclip(5, 10)
+    part1 = main.subclip(0, 5)
+    part2 = main.subclip(5, 10)
 
     # === 4. Load the videos to insert ===
     insert1 = VideoFileClip("editings/new2.mp4")
